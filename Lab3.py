@@ -51,10 +51,13 @@ class Freelancer(Employee):
 
 # creating some employee object
 employees = []
+FullTimeEmployee1= FullTimeEmployee(1, "Ali", 30, 5000)
+PartTimeEmployee1=PartTimeEmployee(2, "Sara", 22, 20, 80)
+Freelancer1=Freelancer(3, "Omar", 27, 1200, 4)
 
-employees.append(FullTimeEmployee(1, "Ali", 30, 5000))
-employees.append(PartTimeEmployee(2, "Sara", 22, 20, 80))
-employees.append(Freelancer(3, "Omar", 27, 1200, 4))
+employees.append(FullTimeEmployee1)
+employees.append(PartTimeEmployee1)
+employees.append(Freelancer1)
 
 
 total_salary = 0
