@@ -49,15 +49,24 @@ class Freelancer(Employee):
         return self.project_rate * self.completed_projects
 
 
-# creating some employee object
-employees = []
-FullTimeEmployee1= FullTimeEmployee(1, "Ali", 30, 5000)
-PartTimeEmployee1=PartTimeEmployee(2, "Sara", 22, 20, 80)
-Freelancer1=Freelancer(3, "Omar", 27, 1200, 4)
+employee_data = [
+    ("FullTime", 1, "Ali", 30, 5000),
+    ("PartTime", 2, "Sara", 22, 20, 80),
+    ("Freelancer", 3, "Omar", 27, 1200, 4),
+]
 
-employees.append(FullTimeEmployee1)
-employees.append(PartTimeEmployee1)
-employees.append(Freelancer1)
+
+employees = []
+
+for data in employee_data:
+    emp_type = data[0]
+    args = data[1:]
+    if emp_type == "FullTime":
+        employees.append(FullTimeEmployee(*args))
+    elif emp_type == "PartTime":
+        employees.append(PartTimeEmployee(*args))
+    elif emp_type == "Freelancer":
+        employees.append(Freelancer(*args))
 
 
 total_salary = 0
